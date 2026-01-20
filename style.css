@@ -1,0 +1,88 @@
+/* Container que limita o que aparece */
+.carousel-container {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden; /* Esconde os outros cards */
+  background: #f9f9f9;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* O trilho que se move */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Cada slide individual */
+.projeto-slide {
+  min-width: 100%; /* Cada slide ocupa o container inteiro */
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  gap: 30px;
+}
+
+/* Card da Imagem (Lado Esquerdo) */
+.projeto-card-img {
+  flex: 0 0 300px; /* Largura fixa da imagem */
+  height: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.projeto-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Informações (Lado Direito) */
+.projeto-info {
+  flex: 1;
+}
+
+.projeto-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.projeto-info p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Botões */
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.3);
+  color: white;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.carousel-container button:hover { background: #333; }
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Responsividade: No celular, a imagem fica em cima do texto */
+@media screen and (max-width: 768px) {
+  .projeto-slide {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .projeto-card-img {
+    flex: 0 0 200px;
+    width: 100%;
+  }
+}

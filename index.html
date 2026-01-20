@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Página de apresentação do Gabriel Peron"
+    />
+    <meta
+      name="keywords"
+      content="Gabriel Peron, portfólio, desenvolvedor, tecnologia, Sales Oliveira, sales, oliveira, sales oliveira, Desenvolvedor, desenvolvedor, desenvolvimento de aplicativos sales oliveira, desenvolvimento de sites sales oliveira, desenvolvimento web sales oliveira, programador sales oliveira, freelancer sales oliveira"
+    />
+    <title>Gabriel Peron</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f4f4f4;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .center {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2%;
+      }
+
+      header {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 5px 0;
+      }
+
+      header .center {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: #007bff;
+      }
+
+      .mobile {
+        display: none;
+      }
+
+      .banner-principal {
+        height: 200px;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+      }
+
+      .banner-principal a {
+        color: white;
+        text-decoration: none;
+        font-size: 32px;
+        border: 2px solid white;
+        padding: 10px 20px;
+        transition: 0.3s;
+      }
+
+      .banner-principal a:hover {
+        background: white;
+        color: #333;
+      }
+
+      .descricao {
+        padding: 50px 0;
+        background: white;
+      }
+
+      .descricao .center {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 40px;
+      }
+
+      .w50 {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .w50 img {
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-width: 100%;
+        height: auto;
+      }
+
+      .projects {
+        padding: 60px 0;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+      }
+
+      .carousel-container {
+        position: relative;
+        max-width: 1500px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .projeto-slide {
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 90px;
+        gap: 90px;
+      }
+
+      .projeto-card-image {
+        flex: 0 0 300px;
+        height: 100px;
+        background: #eee;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .projeto-card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .projeto-info {
+        flex: 1;
+      }
+
+      .projeto-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        color: #007bff;
+      }
+
+      .carousel-container button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        font-size: 20px;
+      }
+
+      .prev {
+        left: 15px;
+      }
+      .next {
+        right: 15px;
+      }
+
+      @media (max-width: 768px) {
+        .projeto-slide {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+        .projeto-card-image {
+          flex: 0 0 200px;
+          width: 100%;
+        }
+        .desktop {
+          display: none;
+        }
+        .mobile {
+          display: block;
+        }
+      }
+      .diario-de-bordo {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+      }
+
+      .timeline {
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      .timeline::after {
+        content: "";
+        position: absolute;
+        width: 4px;
+        background-color: #007bff;
+        top: 0;
+        bottom: 0;
+        left: 20px;
+        margin-left: -2px;
+        border-radius: 10px;
+      }
+
+      .diario-item {
+        padding: 10px 40px;
+        position: relative;
+        background-color: inherit;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+
+      .diario-item::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid #007bff;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+        left: 12px;
+      }
+
+      .diario-content {
+        padding: 20px;
+        background-color: white;
+        position: relative;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        transition: 0.3s;
+      }
+
+      .diario-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 123, 255, 0.15);
+      }
+
+      .diario-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .diario-date {
+        font-weight: bold;
+        color: #007bff;
+        font-size: 0.9rem;
+      }
+
+      .diario-tag {
+        background: #e1efff;
+        color: #007bff;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      .diario-content h3 {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+      }
+
+      .diario-content p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      @media (max-width: 768px) {
+        .projeto-slide {
+          flex-direction: column;
+          text-align: center;
+          padding: 20px;
+        }
+        .projeto-card-image {
+          flex: 0 0 200px;
+          width: 100%;
+        }
+        .desktop {
+          display: none;
+        }
+        .timeline::after {
+          left: 20px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="center">
+        <div class="logo">
+          Gabriel Peron - Seja bem vindo a minha pagina simples de apresentação
+        </div>
+      </div>
+    </header>
+
+    <section class="banner-principal">
+      <div class="center">
+        <h1>
+          <a href="https://wa.me/5516993643272">Entre em contato comigo.</a>
+        </h1>
+      </div>
+    </section>
+
+    <section class="descricao">
+      <div class="center">
+        <div class="w50">
+          <h2>Gabriel Peron</h2>
+          <p>
+            Esforçado e atuo no ramo da programação desde os 15 anos. Iniciei
+            minha jornada com cursos de desenvolvimento de jogos, o que
+            posteriormente me levou a tentar criar uma IA voltada ao apoio
+            psicológico, ainda antes dos meus 17 anos.
+            <br /><br />
+            Possuo ampla experiência em Java, com facilidade para estruturar e
+            raciocinar sobre código rapidamente. Tenho um perfil mais
+            observador, prefiro ouvir antes de falar.
+          </p>
+        </div>
+        <div class="w50">
+          <img
+            src="eu_e_minha_esposa.jpeg"
+            alt="Gabriel Peron"
+            width="190"
+            height="250"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <h2 class="title">Meus Projetos</h2>
+      <div class="center">
+        <div class="carousel-container">
+          <div class="carousel-track">
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <a
+                  href="https://github.com/garpP/IDEemJAVA/tree/main"
+                  target="_blank"
+                  rel="noopener"
+                  ><img src="IDEjogos.png" alt="projeto01"
+                /></a>
+              </div>
+              <div class="projeto-info">
+                <h3>
+                  <a
+                    href="https://github.com/garpP/IDEemJAVA/tree/main"
+                    target="_blank"
+                    rel="noopener"
+                    >IDE de jogos em java</a
+                  >
+                </h3>
+                <p>
+                  Sistema de jogo completo Mecânicas bem definidas Controle de
+                  estados do jogo Lógica de pontuação Interface simples e
+                  intuitiva Código organizado e de fácil manutenção.
+                </p>
+              </div>
+            </div>
+
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <a href="https://github.com/garpP/DEFENSORES-DO-CODIGO"
+                  ><img src="JogoCriadoParaKodland.png" alt="projeto02"
+                /></a>
+              </div>
+              <div class="projeto-info">
+                <h3>
+                  <a href="https://github.com/garpP/DEFENSORES-DO-CODIGO"
+                    >Jogo desenvolvido para a escola Kodland</a
+                  >
+                </h3>
+                <p>
+                  jogo desenvolvido apenas com PgZero math random, criado com
+                  intuito de ensinar python a adolecentes.
+                </p>
+              </div>
+            </div>
+
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <img src="infovip.png" alt="projeto03" />
+              </div>
+              <div class="projeto-info">
+                <a href="https://infoviptecnologia.com.br"
+                  ><h3>
+                    Site desenvolvido para a empresa Infovip tecnologia
+                  </h3></a
+                >
+                <p>
+                  Infovip Tecnologia especialista em tecnologia e segurança da
+                  informação.
+                </p>
+              </div>
+            </div>
+
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <img src="sistemaDeEmailAPIs.png" alt="projeto04" />
+              </div>
+              <div class="projeto-info">
+                <a href="https://github.com/garpP/sistema-de-emails-pra-API"
+                  ><h3>Sistema de emails para APIs</h3></a
+                >
+                <p>
+                  Sistema desenvolvido para o envio de emails transacionais para
+                  APIs de clientes sem dependencia de terceiros.
+                </p>
+              </div>
+            </div>
+
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <img src="limitadorRuby.png" alt="projeto04" />
+              </div>
+              <div class="projeto-info">
+                <a href="https://github.com/garpP/Limitador-de-requisi-es"
+                  ><h3>Limitador de requisições em RUBY</h3></a
+                >
+                <p>
+                  Sistema desenvolvido para limitar requisições em APIs
+                  desenvolvidas em RUBY on Rails.
+                </p>
+              </div>
+            </div>
+
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <img src="copiaminecraft2d.png" alt="projeto04" />
+              </div>
+              <div class="projeto-info">
+                <a href="https://github.com/garpP/copia-minecraft-em-java"
+                  ><h3>Copia do minecraft em modelo 2d</h3></a
+                >
+                <p>
+                  Jogo desenvolvido em java com mecânicas similares ao jogo
+                  minecraft, porem em modelo 2d feito de modo simples com
+                  intuito de ensinar jovens desenvolvedores.
+                </p>
+              </div>
+            </div>
+
+            <div class="projeto-slide">
+              <div class="projeto-card-image">
+                <img src="dubdramasApp.png" alt="projeto04" />
+              </div>
+              <div class="projeto-info">
+                <a href="https://dubdramas.asia/site/"
+                  ><h3>Aplicativo e site feito a pedido de cliente</h3></a
+                >
+                <p>
+                  Site ae app de streaming de series e filmes feito para um
+                  cliente, com sistema de login e pagamento integrado com asas.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="diario-de-bordo" id="portfolio">
+      <h2 class="title">Diário de bordo</h2>
+      <div class="center">
+        <div class="timeline">
+          <article class="diario-item">
+            <div class="diario-content">
+              <div class="diario-header">
+                <span class="diario-date">19 JAN 2026</span>
+                <span class="diario-tag">Entendimento do mercado</span>
+              </div>
+              <h3>Reflexão: A primeira porta</h3>
+              <p>
+                Hoje, conversando com um amigo de infância, chegamos à conclusão
+                de que poucas empresas abrem as portas para quem está começando
+                no mercado. No meu caso, só passei a receber mais oportunidades
+                e ter mais entrevistas após conquistar meu primeiro contrato. As
+                recusas diminuíram e minha visibilidade aumentou.
+                <br /><br />
+                Para você que está começando: <strong>não desista</strong>.
+                Esforce-se ao máximo e não recuse sua primeira oportunidade na
+                área. Ela será o degrau fundamental para te dar o renome e a
+                experiência necessários para que o mercado finalmente te
+                enxergue.
+              </p>
+            </div>
+          </article>
+
+          <article class="diario-item">
+            <div class="diario-content">
+              <div class="diario-header">
+                <span class="diario-date">19 JAN 2026</span>
+                <span class="diario-tag">Crescimento</span>
+              </div>
+              <h3>Refatorando o Portfólio</h3>
+              <p>
+                Hoje decidi dar um passo importante: humanizar meu portfólio.
+                Implementei a seção "Diário de Bordo" para compartilhar não só o
+                código final, mas o processo de aprendizado diário.
+              </p>
+            </div>
+          </article>
+
+          <article class="diario-item">
+            <div class="diario-content">
+              <div class="diario-header">
+                <span class="diario-date">18 JAN 2026</span>
+                <span class="diario-tag">Tech News</span>
+              </div>
+              <h3>Novas APIs de E-mail</h3>
+              <p>
+                Estive estudando como otimizar o envio de e-mails transacionais.
+                O foco é reduzir a dependência de serviços externos pesados e
+                criar algo mais leve e direto para meus clientes.
+              </p>
+            </div>
+          </article>
+
+          <article class="diario-item">
+            <div class="diario-content">
+              <div class="diario-header">
+                <span class="diario-date">15 NOV 2025</span>
+                <span class="diario-tag">Projetos</span>
+              </div>
+              <h3>Finalizando App de Streaming</h3>
+              <p>
+                Concluí a integração de pagamentos via Asaas em um projeto de
+                streaming. Lidar com webhooks e segurança de transações foi um
+                desafio excelente em Java.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      let currentIdx = 0;
+      function moveSlide(direction) {
+        const track = document.querySelector(".carousel-track");
+        const slides = document.querySelectorAll(".projeto-slide");
+        const totalSlides = slides.length;
+        currentIdx += direction;
+        if (currentIdx >= totalSlides) currentIdx = 0;
+        if (currentIdx < 0) currentIdx = totalSlides - 1;
+        const moveAmount = currentIdx * -100;
+        track.style.transform = `translateX(${moveAmount}%)`;
+      }
+    </script>
+  </body>
+</html>
