@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Página de apresentação do Gabriel Peron"
+      content="desenvolvimento app sales oliveira, desenvolvimento web sales oliveira, portfólio sales oliveira, programador sales oliveira, freelancer sales oliveira, desenvolvedor sales oliveira, tecnologia sales oliveira"
     />
     <meta
       name="keywords"
@@ -595,3 +595,4 @@
     </script>
   </body>
 </html>
+
